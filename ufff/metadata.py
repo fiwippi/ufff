@@ -1,4 +1,4 @@
-from utils import parse_date
+from .utils import parse_year
 
 def fix_index(item):
     try:
@@ -30,7 +30,7 @@ def retrieve_metadata(mutagen_file, filename):
             if date == None:
                 date = mutagen_file.get('DATE') # TODO ensure discovery date exists
     if date != None:
-        date = parse_date(str(fix_index(date)))
+        date = parse_year(str(fix_index(date)))
     else:
         print(f"No date loaded for: {filename}")
         date = ""
@@ -65,17 +65,17 @@ def retrieve_metadata(mutagen_file, filename):
     title = fix_index(title)
 
     # Track Number
-    trackn = mutagen_file.get("tracknumber")
-    if trackn == None:
-        trackn = mutagen_file.get("TRCK")
-        if trackn == None:
-            trackn = mutagen_file.get("trkn")
-    trackn = fix_index(trackn)
-    if trackn != None:
+    tracknum = mutagen_file.get("tracknumber")
+    if tracknum == None:
+        tracknum = mutagen_file.get("TRCK")
+        if tracknum == None:
+            tracknum = mutagen_file.get("trkn")
+    tracknum = fix_index(tracknum)
+    if tracknum != None:
         if codec == "M4A":
-            trackn = trackn[0]
-        trackn = str(trackn).zfill(2)
+            tracknum = tracknum[0]
+        tracknum = str(tracknum).zfill(2)
     else:
         print(f"No track number loaded for: {filename}")
 
-    return str(album), str(album_artist), str(date), str(codec), str(title), trackn
+    return album, album_artist, str(date), codec, title, tracknum
