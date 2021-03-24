@@ -1,18 +1,9 @@
-import argparse
 from pathlib import Path
-from ufff.metadata import retrieve_metadata
-from ufff.files import move_file, delete_empty
-from ufff.utils import load_mutagen, is_audio_file, sanitise
+from metadata import retrieve_metadata
+from files import move_file, delete_empty
+from utils import load_mutagen, is_audio_file, sanitise
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-src", "--source-dir", type=str, help="Directory to scan files from", required=True)
-    parser.add_argument("-dst", "--destination-dir", type=str, help="Where to copy the files with corrected folder structure to", required=True)
-    args = vars(parser.parse_args())
-
-    scan_dir = args["source_dir"]
-    output_dir = args["destination_dir"]
-
+def main(scan_dir, output_dir):
     data = {}
     visited_folders = set() # Keeps track of which folders have been checked for additional files
 

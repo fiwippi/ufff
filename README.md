@@ -8,7 +8,7 @@ pip install -r requirements.txt
 ```
 ## Usage
 ```shell
-usage: ufff.py [-h] -src SOURCE_DIR -dst DESTINATION_DIR
+usage: python ufff [-h] -src SOURCE_DIR -dst DESTINATION_DIR
 
 arguments:
   -h, --help            show this help message and exit

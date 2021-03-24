@@ -1,4 +1,4 @@
-from .utils import parse_year
+from utils import parse_year
 
 def fix_index(item):
     try:
