@@ -3,11 +3,20 @@
 **ufff** will structure songs into folders based on song metadata
 
 ## Install
-```shell
-pip install -r requirements.txt
+```console
+# Clone the repo
+$ git clone https://github.com/fiwippi/ufff.git
+
+# Change the working directory to ufff
+$ cd ufff
+
+# Install the requirements
+$ python3 -m pip install -r requirements.txt
 ```
+
 ## Usage
-```shell
+```console
+$ python3 ufff --help
 usage: python ufff [-h] -src SOURCE_DIR -dst DESTINATION_DIR
 
 arguments:
