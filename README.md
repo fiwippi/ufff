@@ -3,12 +3,19 @@
 **ufff** will structure songs into folders based on song metadata
 
 ## Install
-```shell
-pip install -r requirements.txt
+```console
+# Clone the repo
+$ git clone https://github.com/sherlock-project/sherlock.git
+
+# Change the working directory to ufff
+$ cd ufff
+
+# Install the requirements
+$ python3 -m pip install -r requirements.txt
 ```
 ## Usage
-```shell
-usage: python ufff [-h] -src SOURCE_DIR -dst DESTINATION_DIR
+```console
+usage: python3 ufff [-h] -src SOURCE_DIR -dst DESTINATION_DIR
 
 arguments:
   -h, --help            show this help message and exit
